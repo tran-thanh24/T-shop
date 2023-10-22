@@ -1,5 +1,5 @@
 // Lấy danh sách các hình ảnh
-const productImages = document.querySelectorAll('.product-image');
+const productImages = document.querySelectorAll('.image');
 
 // Lặp qua từng hình ảnh và thêm sự kiện mouseover
 productImages.forEach(image => {
