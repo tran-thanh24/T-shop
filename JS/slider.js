@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
         showSlide(currentSlide);
     }
 
-    var interval = setInterval(nextSlide, 3000);
+    var interval = setInterval(nextSlide, 2000);
 
     var prevButton = document.querySelector('.carousel-control-prev');
     var nextButton = document.querySelector('.carousel-control-next');
