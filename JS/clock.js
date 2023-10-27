@@ -1,49 +1,22 @@
-const container = document.getElementById('container');
-const registerBtn = document.getElementById('register');
-const dkyBtn = document.getElementById('dky');
-const loginBtn = document.getElementById('login');
-const backBtn = document.getElementById('back');
-const phone = document.getElementById('phone');
-const email = document.getElementById('email');
+//countdown clock
+function updateCountdown() {
+    var targetDate = new Date('2023-10-30T23:59:59');
+    var now = new Date();
+    var timeRemaining = targetDate - now;
 
-registerBtn.addEventListener('click', () => {
-        container.classList.add("active");
-});
+    var days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
 
-dkyBtn.addEventListener('click', () => {
-    const isPhoneValid = validatePhone(phone);
-    const isEmailValid = validateEmail(email);
-
-    if (isPhoneValid && isEmailValid) {
-        container.classList.add("active");
-    }
-});
-
-loginBtn.addEventListener('click', () => {
-    container.classList.remove("active");
-});
-
-//kiểm tra sđt
-function validatePhone(phoneInput){
-    const phoneNumber = phoneInput.value;
-    const phoneRegex = /^\d{10,11}$/;
-
-    if(!phoneRegex.test(phoneNumber)){
-        alert('Số điện thoại phải từ 10-11 số!!!');
-        return false;
-    }else{
-        return true;
-    }
+    var countdownElement = document.getElementById('countdown');
+    countdownElement.innerHTML = days + ' days, ' + hours + ' hours, ' + minutes + ' minutes, ' + seconds + ' seconds';
 }
 
-//kiểm tra email
-function validateEmail(emailInput) {
-    const email = emailInput.value;
+// Update the countdown every second
+setInterval(updateCountdown, 1000);
 
-    if (email.endsWith("@gmail.com")) {
-        return true;
-    } else {
-        alert("Email phải có định dạng hợp lệ (@gmail.com).");
-        return false;
-    }
-}
+// Initial call to set the initial countdown value
+updateCountdown();
+
+
