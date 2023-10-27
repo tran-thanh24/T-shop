@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
     prevButton.addEventListener('click', function() {
         clearInterval(interval); // Dừng tự động chuyển slide khi nhấn prev
         prevSlide();
-    });
+    }); 
 
     nextButton.addEventListener('click', function() {
         clearInterval(interval); // Dừng tự động chuyển slide khi nhấn next
