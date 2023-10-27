@@ -7,10 +7,14 @@ const phone = document.getElementById('phone');
 const email = document.getElementById('email');
 
 registerBtn.addEventListener('click', () => {
+        container.classList.add("active");
+});
+
+dkyBtn.addEventListener('click', () => {
     const isPhoneValid = validatePhone(phone);
     const isEmailValid = validateEmail(email);
 
-    if(isEmailValid && isPhoneValid){
+    if (isPhoneValid && isEmailValid) {
         container.classList.add("active");
     }
 });
@@ -19,6 +23,7 @@ loginBtn.addEventListener('click', () => {
     container.classList.remove("active");
 });
 
+//kiểm tra sđt
 function validatePhone(phoneInput){
     const phoneNumber = phoneInput.value;
     const phoneRegex = /^\d{10,11}$/;
@@ -31,6 +36,7 @@ function validatePhone(phoneInput){
     }
 }
 
+//kiểm tra email
 function validateEmail(emailInput) {
     const email = emailInput.value;
 
