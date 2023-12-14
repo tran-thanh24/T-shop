@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     }
-
     function nextSlide() {
         currentSlide = (currentSlide + 1) % slides.length;
         showSlide(currentSlide);
