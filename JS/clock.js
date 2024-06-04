@@ -1,6 +1,6 @@
 //countdown clock
 function updateCountdown() {
-    var targetDate = new Date('2023-10-30T23:59:59');
+    var targetDate = new Date('2024-12-31T23:59:59');
     var now = new Date();
     var timeRemaining = targetDate - now;
 
